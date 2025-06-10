@@ -1,32 +1,73 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# Compiled Go binaries
 *.exe
-*.exe~
 *.dll
 *.so
 *.dylib
+*.wasm
+*.o
+*.a
 
-# Test binary, built with `go test -c`
-*.test
+# Go build cache and module download cache
+/bin/
+/pkg/
+/src/
+/vendor/
+/go.mod # Keep go.mod, but exclude generated files if any specific tool creates them
+/go.sum # Keep go.sum
 
-# Code coverage profiles and other test artifacts
-*.out
-coverage.*
-*.coverprofile
-profile.cov
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-# Go workspace file
-go.work
-go.work.sum
-
-# env file
+# Local environment variables
 .env
+.env.*
+!.env.example # If you have an example .env file you want to share
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# IDE and Editor specific files
+.idea/             # IntelliJ IDEA
+.vscode/           # Visual Studio Code
+*.iml              # IntelliJ IDEA module files
+*.project
+*.class
+*.pyc
+*.swp              # Vim swap files
+*~                 # Temporary files from various editors
+
+# Operating System files
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# Log files
+*.log
+log/
+tmp/
+
+# Dependency directories
+vendor/
+
+# Test output
+/test_results/
+
+# Docker build context and volumes
+# Ensure you do NOT commit images, containers, or sensitive Docker volumes
+# The named volume 'db_data' in docker-compose.yml should be ignored here
+db_data/
+docker-compose.override.yml # If you use this for local overrides and don't want to commit
+
+# Go specific files
+# Default output directory for `go build`
+# If you build your binary to a specific path like `./van-booking-app`,
+# ensure that path is listed here.
+# Assuming your binary is built into the project root or `/app` within docker build.
+# For local builds:
+van-booking-app
+van-booking-app.exe
+
+# Go module cache for local development
+.cache/go-build/
+
+# Go test cache
+/go-test/
+
+# GOROUTES (if generated)
+/.goroutes
+
+# Any other temporary files
+*.tmp
