@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:17
+    restart: always
+    platform: linux/amd64
+    networks:
+      - default
+    volumes:
+      - van-booking-db:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+      start_period: 30s
+    ports:
+      - "${DB_PORT}:5432"
+  app:
+
+volumes:
+  van-booking-db:
