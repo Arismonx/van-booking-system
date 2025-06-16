@@ -9,7 +9,7 @@
 
 # Go build cache and module download cache
 /bin/
-/pkg/
+# /pkg/
 /src/
 /vendor/
 /go.mod # Keep go.mod, but exclude generated files if any specific tool creates them
@@ -17,7 +17,7 @@
 
 # Local environment variables
 .env
-.env.*
+# .env.*
 !.env.example # If you have an example .env file you want to share
 
 # IDE and Editor specific files
@@ -71,3 +71,5 @@ van-booking-app.exe
 
 # Any other temporary files
 *.tmp
+
+config.yaml
