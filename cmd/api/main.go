@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/Arismonx/van-booking-system/config"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	conf := config.LoadConfig() // test config
+	fmt.Println(conf)
 }
