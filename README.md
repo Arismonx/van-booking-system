@@ -32,6 +32,7 @@ Designed with a **monolithic architecture** for ease of development and maintena
 * **GORM:** Elegant ORM (Object-Relational Mapping) for database interactions with PostgreSQL.
 * **PostgreSQL:** Robust relational database for data storage.
 * **Viper:** For efficient configuration management.
+* **GoDotENV:** for loading in env for your own daemons.
 * **Go-Playground/Validator:** For declarative request payload validation.
 * **Bcrypt:** For secure password hashing.
 * **Go-JWT:** For JSON Web Token (JWT) handling.
